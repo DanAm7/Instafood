@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import { Redirect } from 'react-router-dom';
 
 
 class Profile extends React.Component {
@@ -35,7 +36,6 @@ class Profile extends React.Component {
     const email = this.props.email;
     console.log("states", StateObject.feed.length);
     console.log("savedstates", localStorage.getItem('states'));
-    
 
     if (!StateObject.profilefeed.length) {
         LoadStates();
