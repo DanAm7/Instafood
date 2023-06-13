@@ -28,6 +28,10 @@ class FoodList extends React.Component {
     
 
     render() {
+
+    if (!this.props.isSignIn) {
+    return <Redirect to='/signin' />
+        }
     
     
    if (!this.props.feed[0]) {
@@ -38,9 +42,7 @@ class FoodList extends React.Component {
     if (feed.length === 0) {
         return <h1 className='font1'>Loading Feed...</h1>
     }
-    if (!isSignIn) {
-        return <Redirect to='/signin' />
-    }
+
     return (
         <div className="list tc center">
            {
