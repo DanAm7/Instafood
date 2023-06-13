@@ -93,7 +93,7 @@ class App extends Component {
 
   onCategories = (cat) => {
     this.setState({ route:'' });
-    fetch('https://shrouded-crag-44494.herokuapp.com/categories', {
+    fetch('https://evening-beach-61667.herokuapp.com/categories', {
       method: 'post',
           headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -108,7 +108,7 @@ class App extends Component {
 
 
   onDel = (id) => {
-    fetch('https://shrouded-crag-44494.herokuapp.com/del', {
+    fetch('https://evening-beach-61667.herokuapp.com/del', {
       method: 'post',
           headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -151,7 +151,7 @@ class App extends Component {
 
 
   MyProfile = () => {
-      fetch('https://shrouded-crag-44494.herokuapp.com/profile', {
+      fetch('https://evening-beach-61667.herokuapp.com/profile', {
         method: 'post',
             headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
@@ -169,7 +169,7 @@ class App extends Component {
   }
 
   LoadUser = (email) => {
-    fetch('https://shrouded-crag-44494.herokuapp.com/user', {
+    fetch('https://evening-beach-61667.herokuapp.com/user', {
       method: 'post',
           headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -185,7 +185,7 @@ class App extends Component {
   }
   
   loadFeed = () => {
-    fetch('https://shrouded-crag-44494.herokuapp.com/getfeed', {
+    fetch('https://evening-beach-61667.herokuapp.com/getfeed', {
       method: 'get',
       headers: {'Content-Type': 'application/json'}
        })
@@ -195,7 +195,7 @@ class App extends Component {
 
 
   profileFeed = (name) => {
-    fetch('https://shrouded-crag-44494.herokuapp.com/profile', {
+    fetch('https://evening-beach-61667.herokuapp.com/profile', {
       method: 'post',
           headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
