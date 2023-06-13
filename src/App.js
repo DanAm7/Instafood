@@ -107,7 +107,10 @@ class App extends Component {
   }
 
 
-  onDel = (id) => {
+  onDel = (id, own_name, profile_name) => {
+    if (own_name != profile_name) {
+      return
+    }
     fetch('https://evening-beach-61667.herokuapp.com/del', {
       method: 'post',
           headers: {'Content-Type': 'application/json'},

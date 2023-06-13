@@ -69,7 +69,7 @@ onRating = (id, email, action) => {
                <h2 onClick={() => {onNameClick(`${ownname}`) }} className='tl ownname pointer font1'>{ownname}</h2>
                </Link>
                <h4 className='type font3'>{type}</h4>
-               <img onClick={() => {onDel(`${id}`) }} className='del pointer' src='https://cdn.iconscout.com/icon/premium/png-512-thumb/delete-1432400-1211078.png' width='35px' height='35px' />
+               <img onClick={() => {onDel(`${id}`,  `${ownname}`, `${username}`) }} className='del pointer' src='https://cdn.iconscout.com/icon/premium/png-512-thumb/delete-1432400-1211078.png' width='35px' height='35px' />
             </div>
             <Link style={{ textDecoration: 'none' }} to='/recipe'>
             <img onClick={() => {onRecipeClick(`${recipe}`, `${name}`, `${ownname}`,`${img}`) }} className='recipeimg pointer tc' alt='recipe' src={img} width='300px' height='300px' />

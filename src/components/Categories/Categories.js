@@ -44,6 +44,7 @@ class Categories extends React.Component {
                     onNameClick={profileFeed} 
                     key={i}
                     img={feed[i].imgsrc}
+                    id={feed[i].id}
                     ownname={feed[i].ownname}
                     name={feed[i].name}
                     type={feed[i].type}
