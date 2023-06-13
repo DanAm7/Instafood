@@ -119,7 +119,7 @@ class AddNewPost extends React.Component  {
         //    alert(dataURL.length);
         // //    if (dataURL.length > 2000000) {
         // //        alert('Image size is too big!')
-        // //        fetch('https://shrouded-crag-44494.herokuapp.com/upload', {
+        // //        fetch('https://evening-beach-61667.herokuapp.com/upload', {
         // //         method: 'POST',
         // //         headers: {'Content-Type': 'application/json'},
         // //         body: JSON.stringify({
@@ -130,7 +130,7 @@ class AddNewPost extends React.Component  {
             alert('Posting Please wait');
             const formData = new FormData();
             formData.append('img', dataurl);
-           fetch('https://shrouded-crag-44494.herokuapp.com/upload', {
+           fetch('https://evening-beach-61667.herokuapp.com/upload', {
             method: 'POST',
             body: formData
         }) .then(res => {
@@ -151,7 +151,7 @@ class AddNewPost extends React.Component  {
 
         console.log('fetch');
 
-        fetch('https://shrouded-crag-44494.herokuapp.com/addpost', {
+        fetch('https://evening-beach-61667.herokuapp.com/addpost', {
             method: 'POST',
             body: formData
         }) 

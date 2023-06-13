@@ -12,7 +12,7 @@ class Card extends React.Component {
     }
 
 getRating = (id) => {
-   fetch('https://shrouded-crag-44494.herokuapp.com/getrating', {
+   fetch('https://evening-beach-61667.herokuapp.com/getrating', {
       method: 'post',
           headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -25,7 +25,7 @@ getRating = (id) => {
 }
    
 onRating = (id, email, action) => {
-      fetch('https://shrouded-crag-44494.herokuapp.com/rating', {
+      fetch('https://evening-beach-61667.herokuapp.com/rating', {
           method: 'post',
               headers: {'Content-Type': 'application/json'},
                   body: JSON.stringify({

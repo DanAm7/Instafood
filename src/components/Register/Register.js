@@ -18,7 +18,7 @@ class Register extends React.Component  {
 
 
     ApiLogIn = (email) => {
-        fetch('https://shrouded-crag-44494.herokuapp.com/login', {
+        fetch('https://evening-beach-61667.herokuapp.com/login', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -40,7 +40,7 @@ class Register extends React.Component  {
 
     onSubmitRegister = () => {
         if (this.state.email && this.state.password && this.state.name) {
-        fetch('https://shrouded-crag-44494.herokuapp.com/register', {
+        fetch('https://evening-beach-61667.herokuapp.com/register', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
