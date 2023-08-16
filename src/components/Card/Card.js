@@ -24,23 +24,49 @@ getRating = (id) => {
        }).catch(console.log('Catch Error2'))
 }
    
-onRating = (id, email, action) => {
-   try { 
-      fetch('https://evening-beach-61667.herokuapp.com/rating', {
-          method: 'post',
-              headers: {'Content-Type': 'application/json'},
-                  body: JSON.stringify({
-                    id: id,
-                    email: email,
-                    action: action    
-        })
-           }).then(rating => rating.json())
-           .then(rating => {
-              this.setState({ Rating: rating })             
-           }).catch()
-  } catch {}
+// onRating = (id, email, action) => {
+//    try { 
+//       fetch('https://evening-beach-61667.herokuapp.com/rating', {
+//           method: 'post',
+//               headers: {'Content-Type': 'application/json'},
+//                   body: JSON.stringify({
+//                     id: id,
+//                     email: email,
+//                     action: action    
+//         })
+//            }).then(rating => rating.json())
+//            .then(rating => {
+//               this.setState({ Rating: rating })             
+//            }).catch()
+//   } catch {}
 
+// }
+onRating = (id, email, action) => {
+   fetch('https://evening-beach-61667.herokuapp.com/rating', {
+       method: 'post',
+       headers: {'Content-Type': 'application/json'},
+       body: JSON.stringify({
+           id: id,
+           email: email,
+           action: action    
+       })
+   })
+   .then(response => {
+       // Check if the response is successful (status code in the range 200-299)
+       if (!response.ok) {
+           throw new Error(`HTTP error! Status: ${response.status}`);
+       }
+       return response.json();
+   })
+   .then(rating => {
+       this.setState({ Rating: rating });
+   })
+   .catch(error => {
+       console.error("There was a problem with the fetch operation:", error.message);
+       // Handle the error as needed e.g., display a notification to the user or update the state.
+   });
 }
+
 
 
 
