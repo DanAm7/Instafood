@@ -57,24 +57,8 @@ class AddNewPost extends React.Component  {
         const type = document.querySelector('.typeadd').value;
         const tags = document.querySelector('.tagsadd').value;
         const recipe = document.querySelector('.recipeadd').value;
-        const name = document.querySelector('.nameadd').value;
+        const name = document.querySelector('.nameadd').value.substring(0, 10);
         const file = document.getElementById('select').files[0];
-
-
-        // const route = this.props.onRouteChange('home');
-        // const clear = this.ClearForm();
-        // const home = this.GoHome();
-
-        // const Next = function() {
-        //     const route = this.props.onRouteChange('home');
-        //     const clear = this.ClearForm();
-        //     const home = this.GoHome();
-        //     route();
-        //     clear();
-        //     home();
-        // }
-
-
 
         if (!file || !name) {
             alert('Please Insert image and name for your new recipe');
