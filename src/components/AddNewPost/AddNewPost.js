@@ -142,7 +142,7 @@ class AddNewPost extends React.Component  {
 
         .then(res => {
             After(Self);
-        })
+        }).catch(alert('444'))
         
     } else {
         alert('Please choose an image');
