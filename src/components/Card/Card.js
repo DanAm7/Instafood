@@ -68,6 +68,14 @@ class Card extends React.Component {
 
 // }
 onRating = (id, email, action) => {
+   // Validate that all parameters are non-empty strings
+   if (typeof id !== "string" || id.trim() === "" ||
+       typeof email !== "string" || email.trim() === "" ||
+       typeof action !== "string" || action.trim() === "") {
+       console.error("Invalid parameters provided. All parameters must be valid strings.");
+       return; // Exit the function early if validation fails
+   }
+
    fetch('https://evening-beach-61667.herokuapp.com/rating', {
        method: 'post',
        headers: {'Content-Type': 'application/json'},
@@ -92,6 +100,7 @@ onRating = (id, email, action) => {
        // Handle the error as needed e.g., display a notification to the user or update the state.
    });
 }
+
 
 
 
