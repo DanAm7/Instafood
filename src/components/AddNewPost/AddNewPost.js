@@ -58,7 +58,6 @@ class AddNewPost extends React.Component  {
         const tags = document.querySelector('.tagsadd').value;
         const recipe = document.querySelector('.recipeadd').value;
         const name = document.querySelector('.nameadd').value.substring(0, 10);
-        alert(name)
         const file = document.getElementById('select').files[0];
 
         if (!file || !name) {
@@ -99,14 +98,13 @@ class AddNewPost extends React.Component  {
             alert('Posting Please wait');
             const formData = new FormData();
             formData.append('img', dataurl);
-            alert('1')
            fetch('https://evening-beach-61667.herokuapp.com/upload', {
             method: 'POST',
             body: formData
         }) .then(res => {
             Self.Next();
             // Next(route, clear, home);
-        }).catch(alert('123'))
+        }).catch()
     }
          
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -118,7 +116,6 @@ class AddNewPost extends React.Component  {
         formData.append('type', type);
         formData.append('tags', tags);
         formData.append('recipe', recipe);
-        alert('2')
         fetch('https://evening-beach-61667.herokuapp.com/addpost', {
             method: 'POST',
             body: formData
@@ -126,7 +123,7 @@ class AddNewPost extends React.Component  {
 
         .then(res => {
             After(Self);
-        }).catch(alert('444'))
+        }).catch()
         
     } else {
         alert('Please choose an image');
