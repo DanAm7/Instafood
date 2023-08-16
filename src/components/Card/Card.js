@@ -11,7 +11,7 @@ class Card extends React.Component {
           }
     }
 
-   getRating = (id) => {
+    getRating = (id) => {
       fetch('https://evening-beach-61667.herokuapp.com/getrating', {
          method: 'post',
          headers: {'Content-Type': 'application/json'},
@@ -24,7 +24,7 @@ class Card extends React.Component {
          return response.json();
       })
       .then(rating => {
-         if (rating && rating[0] && rating[0].rating) {
+         if (rating && Array.isArray(rating) && rating.length > 0 && rating[0].hasOwnProperty('rating')) {
             this.setState({ Rating: rating[0].rating });
          } else {
             throw new Error('Unexpected data structure');
@@ -34,6 +34,7 @@ class Card extends React.Component {
          console.error('There was a problem with the fetch operation:', error.message);
       });
    }
+   
    
 
 // getRating = (id) => {
