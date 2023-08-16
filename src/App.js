@@ -190,7 +190,7 @@ class App extends Component {
            user.json())
          .then(user => {
            this.setState({ user: user[0] })
-          }).catch(alert('Server error, Try again'))
+          }).catch()
          
   }
   
