@@ -21,7 +21,7 @@ getRating = (id) => {
        }).then(rating => rating.json())
        .then(rating => {
           this.setState({ Rating: rating[0].rating })             
-       })
+       }).catch(console.log('Catch Error'))
 }
    
 onRating = (id, email, action) => {

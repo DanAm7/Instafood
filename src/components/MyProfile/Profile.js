@@ -10,20 +10,6 @@ class Profile extends React.Component {
 
     render() {
 
-        const LoggedStates = {
-            feed: [],
-            searchfield: '',
-            route: 'signin',
-            isSignIn: true,
-            profilename: '',
-            profilefeed: [],
-            clikedname: '',
-            recipe: '',
-            recipename: '',
-            ownname: '',
-            user: this.props.StateObject.user
-          }
-
     const SaveStates = this.props.SaveStates;
     const LoadStates = this.props.LoadStates;
     const StateObject = this.props.StateObject;
@@ -37,10 +23,10 @@ class Profile extends React.Component {
     console.log("states", StateObject.feed.length);
     console.log("savedstates", localStorage.getItem('states'));
 
-    if (!StateObject.profilefeed.length) {
-        LoadStates();
-    }
-        SaveStates();
+    // if ((!StateObject.profilefeed.length))  {
+    //     LoadStates();
+    // }
+    //     SaveStates();
 
 
     if (!feed.length) {

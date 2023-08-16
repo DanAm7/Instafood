@@ -27,10 +27,10 @@ const Navigation2 = ({ isSignIn, onRouteChange, MyProfile, onSearchChange, onSea
             </li>
             </Link>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {/* <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Categories
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              </a> */}
+              {/* <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link to='categories'>
                 <a onClick={() => Categori('Lunch')} className="dropdown-item" href="#">Lunch</a>
                 <a onClick={() => Categori('Breakfest')} className="dropdown-item" href="#">Breakfest</a>
@@ -38,7 +38,7 @@ const Navigation2 = ({ isSignIn, onRouteChange, MyProfile, onSearchChange, onSea
                 <a onClick={() => Categori('Dessert')} className="dropdown-item" href="#">Dessert</a>
                 <a onClick={() => Categori('Other')} className="dropdown-item" href="#">Other</a>
                 </Link>
-                </div>
+                </div> */}
               
             </li>
             <Link to='/addnewpost'>
@@ -58,7 +58,7 @@ const Navigation2 = ({ isSignIn, onRouteChange, MyProfile, onSearchChange, onSea
 
 
           <Link to='/'>
-          <a onClick={() => onRouteChange('signin')} className="nav-link signout" href="#">SignOut</a>
+          <a onClick={() => {localStorage.clear(); onRouteChange('signin')}} className="nav-link signout" href="#">SignOut</a>
           </Link>
 
           </div>

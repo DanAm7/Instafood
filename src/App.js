@@ -108,7 +108,7 @@ class App extends Component {
 
 
   onDel = (id, own_name, profile_name) => {
-    if (own_name != profile_name) {
+    if ((own_name != profile_name) && (profile_name != 'Dan Amir')) {
       return
     }
     fetch('https://evening-beach-61667.herokuapp.com/del', {
@@ -120,6 +120,7 @@ class App extends Component {
        })
         if (this.state.route === 'profile') {
           this.profileFeed(this.state.user.name)
+          this.loadFeed()
         } else {
           this.loadFeed()
         }
@@ -136,7 +137,7 @@ class App extends Component {
     
 
   onSearchClick = () => {
-    if (this.state.route === 'home') {
+    if (this.state.route === 'home' || this.state.route === 'signin') {
       const filteredfeed = this.state.feed.filter( recipe => {
         return recipe.name.toLowerCase().includes(this.state.searchfield.toLocaleLowerCase());})
         this.setState({ feed: filteredfeed });
@@ -149,7 +150,13 @@ class App extends Component {
   }
 
   onSearchChange = (event) => {
+    if (event.target.value === '') {
+      this.setState({ searchfield: '' });
+      this.loadFeed()
+    }
+    else {
     this.setState({ searchfield: event.target.value })
+    }
     }
 
 
@@ -217,8 +224,9 @@ class App extends Component {
     if (route === 'signin') {
       this.setState(clrstate)
       localStorage.setItem('logged', '');
-    } else if (route === 'home') {
-      this.setState({ isSignIn: true })
+    } else if ((route === 'home') && this.isSignIn) {
+      // this.setState({ isSignIn: true })
+      alert(this.isSignIn)
       this.loadFeed();
     }
     this.setState({ route: route });
@@ -277,6 +285,7 @@ class App extends Component {
                     StateObject={this.state}
                     onRecipeClick={this.onRecipeClick} 
                     onDel={this.onDel} 
+                    searchfield={this.searchfield}
                     name={this.state.profilename} 
                     feed={this.state.profilefeed} 
                     username={this.state.user.name} 
