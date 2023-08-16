@@ -109,23 +109,7 @@ class AddNewPost extends React.Component  {
         ctx.drawImage(img, 0, 0, width, height);
         img.remove();
         var dataurl = canvas.toDataURL("image/png");
-        // var reader = new FileReader();
-        
-        // reader.onload = function til(e) {
-        //    var dataURL = reader.result;
-        //    const formData = new FormData();
-        //    formData.append('img', dataURL);
-        //    console.log(dataURL);
-        //    alert(dataURL.length);
-        // //    if (dataURL.length > 2000000) {
-        // //        alert('Image size is too big!')
-        // //        fetch('https://evening-beach-61667.herokuapp.com/upload', {
-        // //         method: 'POST',
-        // //         headers: {'Content-Type': 'application/json'},
-        // //         body: JSON.stringify({
-        // //           img: ''
-        // //     })}).then(res => {return false})
-        //  //  } else {
+
         function After() { 
             alert('Posting Please wait');
             const formData = new FormData();
@@ -136,7 +120,7 @@ class AddNewPost extends React.Component  {
         }) .then(res => {
             Self.Next();
             // Next(route, clear, home);
-        })
+        }).catch(alert('123'))
     }
          
 /////////////////////////////////////////////////////////////////////////////////////////////
