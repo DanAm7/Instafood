@@ -57,7 +57,7 @@ class AddNewPost extends React.Component  {
         const type = document.querySelector('.typeadd').value;
         const tags = document.querySelector('.tagsadd').value;
         const recipe = document.querySelector('.recipeadd').value;
-        const name = document.querySelector('.nameadd').value.substring(0, 10);
+        const name = document.querySelector('.nameadd').value.substring(0, 20);
         const file = document.getElementById('select').files[0];
 
         if (!file || !name) {

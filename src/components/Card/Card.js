@@ -21,10 +21,11 @@ getRating = (id) => {
        }).then(rating => rating.json())
        .then(rating => {
           this.setState({ Rating: rating[0].rating })             
-       }).catch(console.log('Catch Error'))
+       }).catch(console.log('Catch Error2'))
 }
    
 onRating = (id, email, action) => {
+   try { 
       fetch('https://evening-beach-61667.herokuapp.com/rating', {
           method: 'post',
               headers: {'Content-Type': 'application/json'},
@@ -37,7 +38,9 @@ onRating = (id, email, action) => {
            .then(rating => {
               this.setState({ Rating: rating })             
            }).catch()
-  }
+  } catch {}
+
+}
 
 
 
@@ -59,7 +62,9 @@ onRating = (id, email, action) => {
     img = 'noimg.jpg'
  } 
  if (!this.state.Rating) {
+   try {
     this.getRating(id);
+   } catch(error) {}
  }
  if (username === `${ownname}` || 'Dan Amir') {
     return ( 
