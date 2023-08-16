@@ -36,7 +36,7 @@ onRating = (id, email, action) => {
            }).then(rating => rating.json())
            .then(rating => {
               this.setState({ Rating: rating })             
-           }).catch(alert('Server error, try again!'))
+           }).catch(alert('Server error, try again!', id, email, action))
   }
 
 
