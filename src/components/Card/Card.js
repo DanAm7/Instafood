@@ -11,18 +11,43 @@ class Card extends React.Component {
           }
     }
 
-getRating = (id) => {
-   fetch('https://evening-beach-61667.herokuapp.com/getrating', {
-      method: 'post',
-          headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify({
-                id: id  
-    })
-       }).then(rating => rating.json())
-       .then(rating => {
-          this.setState({ Rating: rating[0].rating })             
-       }).catch(console.log('Catch Error2'))
-}
+   getRating = (id) => {
+      fetch('https://evening-beach-61667.herokuapp.com/getrating', {
+         method: 'post',
+         headers: {'Content-Type': 'application/json'},
+         body: JSON.stringify({ id: id })
+      })
+      .then(response => {
+         if (!response.ok) {
+            throw new Error('Network response was not ok');
+         }
+         return response.json();
+      })
+      .then(rating => {
+         if (rating && rating[0] && rating[0].rating) {
+            this.setState({ Rating: rating[0].rating });
+         } else {
+            throw new Error('Unexpected data structure');
+         }
+      })
+      .catch(error => {
+         console.error('There was a problem with the fetch operation:', error.message);
+      });
+   }
+   
+
+// getRating = (id) => {
+//    fetch('https://evening-beach-61667.herokuapp.com/getrating', {
+//       method: 'post',
+//           headers: {'Content-Type': 'application/json'},
+//               body: JSON.stringify({
+//                 id: id  
+//     })
+//        }).then(rating => rating.json())
+//        .then(rating => {
+//           this.setState({ Rating: rating[0].rating })             
+//        }).catch(console.log('Catch Error2'))
+// }
    
 // onRating = (id, email, action) => {
 //    try { 
