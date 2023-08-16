@@ -114,6 +114,7 @@ class AddNewPost extends React.Component  {
             alert('Posting Please wait');
             const formData = new FormData();
             formData.append('img', dataurl);
+            alert('1')
            fetch('https://evening-beach-61667.herokuapp.com/upload', {
             method: 'POST',
             body: formData
@@ -132,9 +133,7 @@ class AddNewPost extends React.Component  {
         formData.append('type', type);
         formData.append('tags', tags);
         formData.append('recipe', recipe);
-
-        console.log('fetch');
-
+        alert('2')
         fetch('https://evening-beach-61667.herokuapp.com/addpost', {
             method: 'POST',
             body: formData
